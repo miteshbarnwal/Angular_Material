@@ -1,0 +1,19 @@
+<!-- First write here -->
+<!-- interpolation done here -->
+<p>
+    Today's item: {{item}}
+</p>
+<!-- This item in bracket is nothing but a variable in child.component.ts -->
+
+
+<!-- From child to parent data flow code below -->
+<!-- First write here -->
+<!-- We have this input box -->
+<label>Add an item: <input #newItem></label>
+<!-- The below code is event binding
+The click event is actually a button html element
+On click of this button which is named as Add to parent's list,a method named  addNewItem will be called
+with a value which is nothing but the temp variable of the  the input box.
+So whatever we put in the input box comes as a value in this method's argument.
+ -->
+<button (click)="addNewItem(newItem.value)">Add to parent's list</button>

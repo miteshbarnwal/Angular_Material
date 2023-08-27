@@ -1,0 +1,27 @@
+<!-- Third write here -->
+<!-- Fifth write here -->
+<!-- To make the parent child relationship work, copy the selector from the child.component.ts 
+    and paste it in the parent i.e. app.component.html -->
+<div style="text-align:center">
+<h1>
+    <h2>hi</h2>
+    <!-- Below one is property binding.
+    The app-child has a variable named item and its value will be evaluated from the currentItem
+defined in parent component.This current item is  aproperty in the parent -->
+    <app-child [item]="currentItem"></app-child>
+    <!-- We are mapping the currentItem to the item property of app-child. -->
+</h1>
+</div>
+<router-outlet></router-outlet>
+<!-- app-child is the selector of the child component -->
+
+<!-- code for data flow from child to parent is below -->
+<h2>
+    <app-child [item]="currentItem" (newItemEvent)="addItem($event)"></app-child>
+
+</h2>
+<ul>
+    <li *ngFor="let item of items">
+        {{item}}
+    </li>
+</ul>
